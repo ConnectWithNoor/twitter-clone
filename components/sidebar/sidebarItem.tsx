@@ -1,3 +1,7 @@
+import useCurrentUser from "@/hooks/useCurrentUser";
+import useLoginModal from "@/hooks/useLoginModal";
+import { useRouter } from "next/router";
+import { useCallback } from "react";
 import type { IconType } from "react-icons/";
 
 type Props = {
@@ -5,11 +9,28 @@ type Props = {
   label: string;
   icon: IconType;
   onClick?: () => void;
+  auth?: boolean;
 };
 
-function SidebarItem({ href, label, icon: Icon, onClick }: Props) {
+function SidebarItem({ href, label, icon: Icon, onClick, auth }: Props) {
+  const router = useRouter();
+  const loginModal = useLoginModal();
+  const { data: currentUser } = useCurrentUser();
+
+  const handleClick = useCallback(() => {
+    if (onClick) {
+      return onClick();
+    }
+
+    if (auth && !currentUser) {
+      loginModal.onOpen();
+    } else if (href) {
+      router.push(href);
+    }
+  }, [onClick, href, router, auth, currentUser, loginModal]);
+
   return (
-    <div className="flex flex-row items-center">
+    <div className="flex flex-row items-center" onClick={handleClick}>
       {/* mobile icon */}
       <div className="relative rounded-full h-14 w-14 flex items-center justify-center p-4 hover:bg-slate-300 hover:bg-opacity-10 cursor-pointer lg:hidden">
         <Icon size={28} color="white" />

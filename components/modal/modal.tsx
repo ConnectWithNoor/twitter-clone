@@ -37,7 +37,7 @@ function Modal({
     }
 
     onSubmit();
-  }, [disabled]);
+  }, [disabled, onSubmit]);
 
   if (!isOpen) {
     return null;

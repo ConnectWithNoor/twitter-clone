@@ -1,4 +1,4 @@
-import useUsers from "@/hooks/userUsers";
+import useUsers from "@/hooks/useUsers";
 import Avatar from "../user/avatar";
 
 function FollowBar() {

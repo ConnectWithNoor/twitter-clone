@@ -1,4 +1,4 @@
-import useUser from "@/hooks/userUser";
+import useUser from "@/hooks/useUser";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
@@ -27,7 +27,7 @@ const Avatar = ({ userId, isLarge, hasBorder }: Props) => {
     <div
       className={`${hasBorder ? "border-4 border-black" : ""} ${
         isLarge ? "h-32 " : "h-12 "
-      }${isLarge ? "w-3 " : "w-12 "}
+      }${isLarge ? "w-32 " : "w-12 "}
       rounded-full hover:opacity-90 transition cursor-pointer relative
       `}
     >

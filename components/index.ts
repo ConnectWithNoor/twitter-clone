@@ -7,6 +7,9 @@ import LoginModal from "./modal/loginModal";
 import Modal from "./modal/modal";
 import RegisterModal from "./modal/registerModal";
 import SidebarItem from "./sidebar/sidebarItem";
+import Avatar from "./user/avatar";
+import UserBio from "./user/userbio";
+import UserHero from "./user/userhero";
 
 export {
   Layout,
@@ -18,4 +21,7 @@ export {
   LoginModal,
   Input,
   RegisterModal,
+  Avatar,
+  UserBio,
+  UserHero,
 };

@@ -6,15 +6,16 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method !== "GET") {
+  if (req.method !== "PATCH") {
     return res.status(405).end();
   }
 
   try {
     const { currentUser } = await serverAuth(req);
+
     const { name, username, bio, profileImage, coverImage } = req.body;
 
-    if (name || username) {
+    if (!name || !username) {
       throw new Error("Missing fields");
     }
 

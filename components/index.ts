@@ -3,6 +3,7 @@ import FollowBar from "./followbar/followbar";
 import Header from "./header/header";
 import Input from "./input/Input";
 import Layout from "./layout/layout";
+import EditModal from "./modal/editModal";
 import LoginModal from "./modal/loginModal";
 import Modal from "./modal/modal";
 import RegisterModal from "./modal/registerModal";
@@ -24,4 +25,5 @@ export {
   Avatar,
   UserBio,
   UserHero,
+  EditModal,
 };

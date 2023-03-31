@@ -1,4 +1,4 @@
-import { Form, Header, PostItem } from "@/components";
+import { CommentFeed, Form, Header, PostItem } from "@/components";
 import usePost from "@/hooks/usePost";
 import { useRouter } from "next/router";
 import { ClipLoader } from "react-spinners";
@@ -23,9 +23,10 @@ function PostView() {
       <PostItem data={fetchedPost} />
       <Form
         postId={postId as string}
-        iscomment
+        isComment
         placeholder="Tweet your reply"
       />
+      <CommentFeed comments={fetchedPost?.comments} />
     </>
   );
 }

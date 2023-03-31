@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { ClipLoader } from "react-spinners";
 
-import { Header, UserBio, UserHero } from "@/components";
+import { Header, PostFeed, UserBio, UserHero } from "@/components";
 import useUser from "@/hooks/useUser";
 
 function UserProfile() {
@@ -23,6 +23,7 @@ function UserProfile() {
       <Header label={fetchedUser?.name} showBackArrow />
       <UserHero userId={userId as string} />
       <UserBio userId={userId as string} />
+      <PostFeed userId={userId as string} />
     </>
   );
 }

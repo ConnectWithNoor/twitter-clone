@@ -29,7 +29,7 @@ function Sidebar() {
     {
       id: 2,
       label: "Profile",
-      href: "/user/123",
+      href: `/users/${currentUser?.id}`,
       icon: FaUser,
       auth: true,
     },

@@ -10,7 +10,7 @@ type Props = {
 function Header({ label, showBackArrow }: Props) {
   const router = useRouter();
 
-  const handleBack = useCallback(() => router.back, []);
+  const handleBack = useCallback(() => router.back(), []);
 
   return (
     <div className="border-b-[1px] border-neutral-800 p-5">

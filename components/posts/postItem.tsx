@@ -17,6 +17,7 @@ function PostItem({ data, userId }: Props) {
   const loginModal = useLoginModal();
 
   const { data: currentUser } = useCurrentUser();
+
   const { hasLiked, toggleLike } = useLike({
     postId: data.id,
     userId: userId!,
@@ -31,7 +32,7 @@ function PostItem({ data, userId }: Props) {
   );
 
   const gotoPost = useCallback(() => {
-    router.push(`posts/${data.id}`);
+    router.push(`/posts/${data.id}`);
   }, [router, data.id]);
 
   const onLike = useCallback(

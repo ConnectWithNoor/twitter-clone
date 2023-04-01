@@ -25,6 +25,7 @@ function Sidebar() {
       href: "/notifications",
       icon: BsBellFill,
       auth: true,
+      alert: currentUser?.hasNotification,
     },
     {
       id: 2,
@@ -48,6 +49,7 @@ function Sidebar() {
                 label={item.label}
                 icon={item.icon}
                 auth={item.auth}
+                alert={item.alert}
               />
             );
           })}

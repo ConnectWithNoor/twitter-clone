@@ -8,6 +8,7 @@ import EditModal from "./modal/editModal";
 import LoginModal from "./modal/loginModal";
 import Modal from "./modal/modal";
 import RegisterModal from "./modal/registerModal";
+import NotificationsFeed from "./notifications/notificationFeed";
 import CommentFeed from "./posts/commentFeed";
 import PostFeed from "./posts/postFeed";
 import PostItem from "./posts/postItem";
@@ -34,4 +35,5 @@ export {
   PostFeed,
   PostItem,
   CommentFeed,
+  NotificationsFeed,
 };
